@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+    - '12' # EOL: April 2022
+    - '10' # EOL: April 2021
+
+jobs:
+    include:
+        - stage: deploy
+          node_js: "lts/*"
+          script: skip
+          before_deploy: if [ "$TRAVIS_BRANCH" = master ] && [ "$TRAVIS_PULL_REQUEST" = false ]; then npm version prerelease --no-git-tag-version --preid "$TRAVIS_BUILD_NUMBER"; fi
+          deploy:
+              - provider: npm
+                email: info@saturnserver.org
+                api_key:
+                    secure: VAMb5x7QDZ2QkVehDV+b54x05rU1tIZevPoZYOGGS3Tmkm46gVg3J5cTYmXqFhWYRiHA48ygF3Ngg6NXO8e/sHiSmusggXw4xV9kUhtqAm8Ir48nguB58UxnJc2p31UiZlgAF9/lvi9OCMEOuw85OVdx6Jud7Yv71F0PAfD8ZvH2umIruhY/wMhp5zN+pAeDogBX5y4XcitkjLM+Mj9ujkt6K2j1iVbdm6/ksHXRRQS8r44xi3ZY3eenlpf5Yfi/zfssCYgnjy/Ls4pfKFQFNb3G46qeYLkfNie8WS2uSw07kzqXu1p4bIcNles1rVqaZOKY4vE8w+ccn/K9fRRUtN2wNrjdTq3HByFl9i962wibr8L80UeAPnjZV9d8CqydDRuGnBeTmaq+gCOjvJTTtNHyDYPVJYv11Hm5st2eeAvKV1Jv/CBVbBiD5DsmLy3aP9xGqgUTW3jF5rH4DTzr4fF4TElP6xXSXMyvaTizaZgtiiXOVhgZes+gbIRdDitVjqLpXlYXpqV8HXBomY7V8KHucEGuTveaU3HHOfnRYQ8aDE0LaJWyGNxlPye3UvWMZbh/oYeW6vr1APk/PzL34cLr7cunEdavjyb7HeAvtONkx9InkGFaPv9+Rol+61AZqU8yXZbUCdLobzXQaOzBSNkNVdYzbDTqskjbWk8i23E=
+                tag: next
+                skip_cleanup: true
+                on:
+                    branch: master
+                    repo: Ionaru/eslint-config
+              - provider: npm
+                email: info@saturnserver.org
+                api_key:
+                    secure: VAMb5x7QDZ2QkVehDV+b54x05rU1tIZevPoZYOGGS3Tmkm46gVg3J5cTYmXqFhWYRiHA48ygF3Ngg6NXO8e/sHiSmusggXw4xV9kUhtqAm8Ir48nguB58UxnJc2p31UiZlgAF9/lvi9OCMEOuw85OVdx6Jud7Yv71F0PAfD8ZvH2umIruhY/wMhp5zN+pAeDogBX5y4XcitkjLM+Mj9ujkt6K2j1iVbdm6/ksHXRRQS8r44xi3ZY3eenlpf5Yfi/zfssCYgnjy/Ls4pfKFQFNb3G46qeYLkfNie8WS2uSw07kzqXu1p4bIcNles1rVqaZOKY4vE8w+ccn/K9fRRUtN2wNrjdTq3HByFl9i962wibr8L80UeAPnjZV9d8CqydDRuGnBeTmaq+gCOjvJTTtNHyDYPVJYv11Hm5st2eeAvKV1Jv/CBVbBiD5DsmLy3aP9xGqgUTW3jF5rH4DTzr4fF4TElP6xXSXMyvaTizaZgtiiXOVhgZes+gbIRdDitVjqLpXlYXpqV8HXBomY7V8KHucEGuTveaU3HHOfnRYQ8aDE0LaJWyGNxlPye3UvWMZbh/oYeW6vr1APk/PzL34cLr7cunEdavjyb7HeAvtONkx9InkGFaPv9+Rol+61AZqU8yXZbUCdLobzXQaOzBSNkNVdYzbDTqskjbWk8i23E=
+                skip_cleanup: true
+                on:
+                    branch: master
+                    repo: Ionaru/eslint-config
+                    tags: true
