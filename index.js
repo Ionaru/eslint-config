@@ -43,7 +43,7 @@ module.exports = {
           accessibility: "explicit"
         }
       ],
-      "@typescript-eslint/indent": [
+      "indent": [
         "error",
         4,
         {
@@ -53,7 +53,8 @@ module.exports = {
           },
           FunctionExpression: {
             parameters: "first"
-          }
+          },
+          SwitchCase: 1
         }
       ],
       "@typescript-eslint/interface-name-prefix": [
