@@ -16,7 +16,7 @@
     "scripts": {
         "test": "node index.js"
     },
-    "optionalDependencies": {
+    "peerDependencies": {
         "@typescript-eslint/eslint-plugin": "^2.18.0",
         "@typescript-eslint/eslint-plugin-tslint": "^2.18.0",
         "eslint": "^6.8.0",
@@ -26,6 +26,6 @@
         "eslint-plugin-sonarjs": "^0.5.0"
     },
     "dependencies": {
-        "@typescript-eslint/parser": "^2.24.0"
+        "@typescript-eslint/parser": "^2.30.0"
     }
 }
