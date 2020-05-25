@@ -17,8 +17,7 @@
     },
     "homepage": "https://github.com/Ionaru/eslint-config#readme",
     "scripts": {
-        "pretest": "eslint --config index.js --parser-options \"{project: \"tsconfig.json\"}\" --env node --env es6 index.js",
-        "test": "node index.js"
+        "test": "jest tests/test.js"
     },
     "peerDependencies": {
         "@typescript-eslint/eslint-plugin": "^3.0.0",
@@ -40,6 +39,7 @@
         "eslint-plugin-no-null": "^1.0.2",
         "eslint-plugin-prefer-arrow": "^1.1.7",
         "eslint-plugin-sonarjs": "^0.5.0",
+        "jest": "^26.0.1",
         "tslint": "^6.1.2",
         "typescript": "^3.9.3"
     }
