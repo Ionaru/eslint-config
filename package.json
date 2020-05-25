@@ -3,6 +3,9 @@
     "version": "1.0.3",
     "description": "My custom flavoured config for ESLint",
     "main": "index.js",
+    "files": [
+        "index.js"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Ionaru/eslint-config.git"
@@ -14,18 +17,30 @@
     },
     "homepage": "https://github.com/Ionaru/eslint-config#readme",
     "scripts": {
+        "pretest": "eslint --config index.js --parser-options \"{project: \"tsconfig.json\"}\" --env node --env es6 index.js",
         "test": "node index.js"
     },
     "peerDependencies": {
-        "@typescript-eslint/eslint-plugin": "^2.18.0",
-        "@typescript-eslint/eslint-plugin-tslint": "^2.18.0",
-        "eslint": "^6.8.0",
+        "@typescript-eslint/eslint-plugin": "^3.0.0",
+        "@typescript-eslint/eslint-plugin-tslint": "^3.0.0",
+        "eslint": "^7.1.0",
         "eslint-plugin-import": "^2.20.0",
         "eslint-plugin-no-null": "^1.0.2",
         "eslint-plugin-prefer-arrow": "^1.1.7",
         "eslint-plugin-sonarjs": "^0.5.0"
     },
     "dependencies": {
-        "@typescript-eslint/parser": "^2.30.0"
+        "@typescript-eslint/parser": "^3.0.0"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^3.0.0",
+        "@typescript-eslint/eslint-plugin-tslint": "^3.0.0",
+        "eslint": "^7.1.0",
+        "eslint-plugin-import": "^2.20.0",
+        "eslint-plugin-no-null": "^1.0.2",
+        "eslint-plugin-prefer-arrow": "^1.1.7",
+        "eslint-plugin-sonarjs": "^0.5.0",
+        "tslint": "^6.1.2",
+        "typescript": "^3.9.3"
     }
 }
