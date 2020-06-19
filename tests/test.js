@@ -1,19 +1,24 @@
 const fs = require('fs');
 const eslint = require('eslint');
 
-function getErrors(configFile, fileToTest) {
+function getErrors(fileToTest, project = 'tests/configs/test.tsconfig.json') {
     const CLIEngine = eslint.CLIEngine;
 
     const cli = new CLIEngine({
-        configFile: configFile,
+        configFile: 'index.js',
         envs: ['node', 'es6'],
-        parserOptions: {
-            project: 'tests/tsconfig.json'
-        }
+        parserOptions: {project}
     });
 
     return cli.executeOnFiles(fileToTest);
 }
+
+describe('Self-lint', () => {
+
+    it('must not have any errors in Index.js', () => {
+        expect(getErrors('index.js', 'tests/configs/index.tsconfig.json').results[0].messages).toEqual([]);
+    });
+});
 
 describe('Validate ESLint configs on valid files', () => {
 
@@ -22,7 +27,7 @@ describe('Validate ESLint configs on valid files', () => {
 
     files.forEach((file) => {
         it(file, () => {
-            expect(getErrors('index.js', path + file).results[0].messages).toEqual([]);
+            expect(getErrors(path + file).results[0].messages).toEqual([]);
         });
     });
 });
@@ -32,7 +37,7 @@ describe('Validate ESLint configs on invalid files', () => {
     const path = 'tests/test-files/nok/';
 
     it('interfaces', () => {
-        expect(getErrors('index.js', path + 'interface.ts').results[0].messages).toEqual(
+        expect(getErrors(path + 'interface.ts').results[0].messages).toEqual(
             [
                 {
                     "column": 11,
