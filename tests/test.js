@@ -39,7 +39,7 @@ describe('Validate ESLint configs on invalid files', () => {
                     "endColumn": 14,
                     "endLine": 1,
                     "line": 1,
-                    "message": "Interface name Moo must have one of the following prefixes: I",
+                    "message": "Interface name `Moo` must have one of the following prefixes: I",
                     "messageId": "missingAffix",
                     "nodeType": "Identifier",
                     "ruleId": "@typescript-eslint/naming-convention",
