@@ -7,9 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### BREAKING CHANGES
 - Changed 'optionalDependencies' to 'peerDependencies.
-- Upgraded to @typescript-eslint/eslint-plugin 3.0.0.
-- Upgraded to @typescript-eslint/eslint-plugin-tslint 3.0.0.
-- Upgraded to eslint 7.1.0.
+- Upgraded to @typescript-eslint/eslint-plugin 4.1.1.
+- Upgraded to @typescript-eslint/eslint-plugin-tslint 4.1.1.
+- Upgraded to eslint 7.9.0.
 
 ### Added
 - Testing

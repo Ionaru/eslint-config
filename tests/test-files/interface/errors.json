@@ -1,0 +1,107 @@
+[
+    {
+        "column": 11,
+        "endColumn": 14,
+        "endLine": 1,
+        "line": 1,
+        "message": "Interface name `Moo` must have one of the following prefixes: I",
+        "messageId": "missingAffix",
+        "nodeType": "Identifier",
+        "ruleId": "@typescript-eslint/naming-convention",
+        "severity": 2
+    },
+    {
+        "column": 14,
+        "endColumn": 14,
+        "endLine": 2,
+        "fix": {
+            "range": [
+                29,
+                29
+            ],
+            "text": ";"
+        },
+        "line": 2,
+        "message": "Expected a semicolon.",
+        "messageId": "expectedSemi",
+        "nodeType": "Identifier",
+        "ruleId": "@typescript-eslint/member-delimiter-style",
+        "severity": 2
+    },
+    {
+        "column": 14,
+        "endColumn": 14,
+        "endLine": 3,
+        "fix": {
+            "range": [
+                43,
+                43
+            ],
+            "text": ";"
+        },
+        "line": 3,
+        "message": "Expected a semicolon.",
+        "messageId": "expectedSemi",
+        "nodeType": "Identifier",
+        "ruleId": "@typescript-eslint/member-delimiter-style",
+        "severity": 2
+    },
+    {
+        "column": 5,
+        "endColumn": 21,
+        "endLine": 4,
+        "line": 4,
+        "message": "Identifier 'invalid_property' is not in camel case.",
+        "messageId": "notCamelCase",
+        "nodeType": "Identifier",
+        "ruleId": "camelcase",
+        "severity": 2
+    },
+    {
+        "column": 5,
+        "endColumn": 6,
+        "endLine": 9,
+        "line": 9,
+        "message": "The key 'Y' is not sorted alphabetically (tslint:object-literal-sort-keys)",
+        "messageId": "failure",
+        "nodeType": null,
+        "ruleId": "@typescript-eslint/tslint/config",
+        "severity": 2
+    },
+    {
+        "column": 2,
+        "endColumn": 1,
+        "endLine": 12,
+        "fix": {
+            "range": [
+                149,
+                149
+            ],
+            "text": ";"
+        },
+        "line": 11,
+        "message": "Missing semicolon.",
+        "messageId": "missingSemi",
+        "nodeType": "VariableDeclaration",
+        "ruleId": "@typescript-eslint/semi",
+        "severity": 2
+    },
+    {
+        "column": 9,
+        "endColumn": 1,
+        "endLine": 14,
+        "fix": {
+            "range": [
+                159,
+                159
+            ],
+            "text": ";"
+        },
+        "line": 13,
+        "message": "Missing semicolon.",
+        "messageId": "missingSemi",
+        "nodeType": "ExpressionStatement",
+        "ruleId": "@typescript-eslint/semi",
+        "severity": 2
+    }
+]
