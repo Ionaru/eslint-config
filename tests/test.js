@@ -28,13 +28,21 @@ describe('Validate ESLint configs on files', () => {
     const contents = fs.readdirSync(filesPath, {withFileTypes: true});
     const directories = contents.filter((content) => content.isDirectory()).map((dir) => dir.name);
 
-    it.each(directories)('directory: %s', (directory) => {
+    describe.each(directories)('directory: %s', (directory) => {
         const errorFilePath = path.join(filesPath, directory, 'errors.json');
         const notOkFile = path.join(filesPath, directory, 'nok.ts');
         const okFile = path.join(filesPath, directory, 'ok.ts');
 
-        expect(getErrors(okFile).results[0].messages).toEqual([]);
-        expect(getErrors(notOkFile).results[0].messages).toEqual(JSON.parse(fs.readFileSync(errorFilePath).toString()));
-    });
+        if (fs.existsSync(notOkFile)) {
+            it('should match defined errors', () => {
+                expect(getErrors(notOkFile).results[0].messages).toEqual(JSON.parse(fs.readFileSync(errorFilePath).toString()));
+            });
+        }
 
+        if (fs.existsSync(okFile)) {
+            it('should give no errors', () => {
+                expect(getErrors(okFile).results[0].messages).toEqual([]);
+            });
+        }
+    });
 });

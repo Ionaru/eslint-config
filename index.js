@@ -208,8 +208,8 @@ module.exports = {
             },
         ],
         'comma-dangle': ['error', 'always-multiline'],
-        'no-redeclare': 'error',
-        'no-shadow': [
+        '@typescript-eslint/no-redeclare': 'error',
+        '@typescript-eslint/no-shadow': [
             'error',
             {
                 builtinGlobals: true,
