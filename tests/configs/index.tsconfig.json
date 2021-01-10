@@ -1,6 +1,6 @@
 {
     "allowJs": true,
-    "include": [
+    "files": [
         "../../index.js"
     ]
 }
