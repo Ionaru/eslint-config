@@ -31,18 +31,23 @@ describe('Validate ESLint configs on files', () => {
     describe.each(directories)('directory: %s', (directory) => {
         const errorFilePath = path.join(filesPath, directory, 'errors.json');
         const notOkFile = path.join(filesPath, directory, 'nok.ts');
-        const okFile = path.join(filesPath, directory, 'ok.ts');
-
-        if (fs.existsSync(notOkFile)) {
-            it('should match defined errors', () => {
-                expect(getErrors(notOkFile).results[0].messages).toEqual(JSON.parse(fs.readFileSync(errorFilePath).toString()));
-            });
+        const notOkSpecFile = path.join(filesPath, directory, 'nok.spec.ts');
+        for (const file of [notOkFile, notOkSpecFile]) {
+            if (fs.existsSync(file)) {
+                it('should match defined errors', async () => {
+                    expect(getErrors(file).results[0].messages).toStrictEqual(JSON.parse(fs.readFileSync(errorFilePath).toString()));
+                });
+            }
         }
 
-        if (fs.existsSync(okFile)) {
-            it('should give no errors', () => {
-                expect(getErrors(okFile).results[0].messages).toEqual([]);
-            });
+        const okFile = path.join(filesPath, directory, 'ok.ts');
+        const okSpecFile = path.join(filesPath, directory, 'ok.spec.ts');
+        for (const file of [okFile, okSpecFile]) {
+            if (fs.existsSync(file)) {
+                it('should give no errors', () => {
+                    expect(getErrors(file).results[0].messages).toStrictEqual([]);
+                });
+            }
         }
     });
 });

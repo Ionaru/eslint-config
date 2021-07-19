@@ -17,6 +17,13 @@ module.exports = {
         'plugin:import/typescript',
     ],
     rules: {
+        'import/extensions': [
+            'error',
+            'always',
+            {
+                'ignorePackages': true
+            },
+        ],
         'import/order': [
             'error',
             {
@@ -227,4 +234,16 @@ module.exports = {
         'no-underscore-dangle': 'error',
         'no-unused-expressions': 'error',
     },
+    'overrides': [
+        {
+            'files': ['*.spec.ts'],
+            "extends": ["plugin:jest/all"],
+            'rules': {
+                'import/extensions': 'off',
+                'jest/no-hooks': 'off',
+                'sonarjs/no-identical-functions': 'off',
+                'sonarjs/no-duplicate-string': 'off'
+            }
+        }
+    ]
 };

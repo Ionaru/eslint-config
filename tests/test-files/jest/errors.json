@@ -1,0 +1,37 @@
+[
+    {
+        "column": 5,
+        "endColumn": 7,
+        "endLine": 15,
+        "line": 8,
+        "message": "Every test should have either `expect.assertions(<number of assertions>)` or `expect.hasAssertions()` as its first expression",
+        "messageId": "haveExpectAssertions",
+        "nodeType": "CallExpression",
+        "ruleId": "jest/prefer-expect-assertions",
+        "severity": 2,
+        "suggestions": [
+            {
+                "desc": "Add `expect.hasAssertions()`",
+                "fix": {
+                    "range": [
+                        223,
+                        223
+                    ],
+                    "text": "expect.hasAssertions();"
+                },
+                "messageId": "suggestAddingHasAssertions"
+            },
+            {
+                "desc": "Add `expect.assertions(<number of assertions>)`",
+                "fix": {
+                    "range": [
+                        223,
+                        223
+                    ],
+                    "text": "expect.assertions();"
+                },
+                "messageId": "suggestAddingAssertions"
+            }
+        ]
+    }
+]

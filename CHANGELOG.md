@@ -4,7 +4,13 @@ All notable changes to my ESLint config will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-[comment]: <> (## [Unreleased])
+## [Unreleased]
+### BREAKING CHANGES
+- Added eslint-plugin-jest to peerDependencies
+
+### Added
+- Linting and special exceptions for Jest testing files.
+
 ## [3.1.0] - 2021-05-05
 ### Added
 - Support for eslint-plugin-sonarjs@^0.6.0
@@ -21,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.0] - 2020-09-07
 ### BREAKING CHANGES
-- Changed 'optionalDependencies' to 'peerDependencies.
+- Changed 'optionalDependencies' to 'peerDependencies'.
 - Upgraded to @typescript-eslint/eslint-plugin 4.1.1.
 - Upgraded to @typescript-eslint/eslint-plugin-tslint 4.1.1.
 - Upgraded to eslint 7.9.0.
