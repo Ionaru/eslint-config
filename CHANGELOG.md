@@ -6,10 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### BREAKING CHANGES
-- Added eslint-plugin-jest to peerDependencies
+- Added eslint-plugin-jest to peerDependencies.
+- Dropped support for Node.js 10.
 
 ### Added
 - Linting and special exceptions for Jest testing files.
+- Support for eslint-plugin-sonarjs@^0.8.0
+- Support for eslint-plugin-sonarjs@^0.9.0
 
 ## [3.1.0] - 2021-05-05
 ### Added
