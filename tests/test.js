@@ -15,7 +15,7 @@ function getErrors(fileToTest, project = path.join('tests', 'configs', 'test.tsc
     return cli.executeOnFiles(fileToTest);
 }
 
-xdescribe('Self-lint', () => {
+describe('Self-lint', () => {
 
     it('must not have any errors in Index.js', () => {
         expect(getErrors('index.js', path.join('tests', 'configs', 'index.tsconfig.json')).results[0].messages).toEqual([]);

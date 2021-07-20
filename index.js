@@ -21,7 +21,7 @@ module.exports = {
             'error',
             'always',
             {
-                'ignorePackages': true
+                ignorePackages: true,
             },
         ],
         'import/order': [
@@ -234,16 +234,16 @@ module.exports = {
         'no-underscore-dangle': 'error',
         'no-unused-expressions': 'error',
     },
-    'overrides': [
+    overrides: [
         {
-            'files': ['*.spec.ts'],
-            "extends": ["plugin:jest/all"],
-            'rules': {
+            files: ['*.spec.ts'],
+            extends: ['plugin:jest/all'],
+            rules: {
                 'import/extensions': 'off',
                 'jest/no-hooks': 'off',
                 'sonarjs/no-identical-functions': 'off',
-                'sonarjs/no-duplicate-string': 'off'
-            }
-        }
-    ]
+                'sonarjs/no-duplicate-string': 'off',
+            },
+        },
+    ],
 };
