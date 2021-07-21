@@ -43,14 +43,15 @@ describe('Validate ESLint configs on files', () => {
 
     describe.each(directories)('directory: %s', (directory) => {
         const errorFilePath = path.join(filesPath, directory, 'errors.json');
-        const notOkFile = path.join(filesPath, directory, 'nok.ts');
-        const notOkSpecFile = path.join(filesPath, directory, 'nok.spec.ts');
-        for (const file of [notOkFile, notOkSpecFile]) {
+        const notOkFilePath = path.join(filesPath, directory, 'nok.ts');
+        const notOkSpecFilePath = path.join(filesPath, directory, 'nok.spec.ts');
+        const notOkErrorsFilePath = path.join(filesPath, directory, 'nok-errors.json');
+        for (const file of [notOkFilePath, notOkSpecFilePath]) {
             if (fs.existsSync(file)) {
-                it('must match defined errors', () => {
+                it('nok.ts file must give errors that match defined errors.json', () => {
                     expect.assertions(1);
                     const errors = getErrors(file).results[0].messages;
-                    fs.writeFileSync(path.join(filesPath, directory, 'nok-errors.json'), JSON.stringify(errors, undefined, 4));
+                    fs.writeFileSync(notOkErrorsFilePath, JSON.stringify(errors, undefined, 4));
                     expect(errors).toStrictEqual(JSON.parse(fs.readFileSync(errorFilePath).toString()));
                 });
             }
@@ -58,13 +59,14 @@ describe('Validate ESLint configs on files', () => {
 
         const okFile = path.join(filesPath, directory, 'ok.ts');
         const okSpecFile = path.join(filesPath, directory, 'ok.spec.ts');
+        const okErrorsFilePath = path.join(filesPath, directory, 'ok-errors.json');
         for (const file of [okFile, okSpecFile]) {
             if (fs.existsSync(file)) {
-                it('must give no errors', () => {
+                it(`ok.ts file must give no errors`, () => {
                     expect.assertions(1);
                     const errors = getErrors(file).results[0].messages;
                     if (errors.length) {
-                        fs.writeFileSync(path.join(filesPath, directory, 'ok-errors.json'), JSON.stringify(errors, undefined, 4));
+                        fs.writeFileSync(okErrorsFilePath, JSON.stringify(errors, undefined, 4));
                     }
                     expect(errors).toStrictEqual([]);
                 });

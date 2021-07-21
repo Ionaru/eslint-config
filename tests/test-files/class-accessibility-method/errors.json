@@ -1,0 +1,13 @@
+[
+    {
+        "ruleId": "@typescript-eslint/explicit-member-accessibility",
+        "severity": 2,
+        "message": "Missing accessibility modifier on method definition doSomething.",
+        "line": 8,
+        "column": 5,
+        "nodeType": "MethodDefinition",
+        "messageId": "missingAccessibility",
+        "endLine": 10,
+        "endColumn": 6
+    }
+]
