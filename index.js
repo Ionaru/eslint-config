@@ -161,7 +161,6 @@ module.exports = {
             'error',
             {
                 rules: {
-                    'import-spacing': true,
                     'jsdoc-format': [true, 'check-multiline-start'],
                     'no-reference-import': true,
                     'object-literal-sort-keys': true,
@@ -236,11 +235,12 @@ module.exports = {
     },
     overrides: [
         {
-            files: ['*.spec.ts'],
+            files: ['*.spec.ts', '*.spec.js'],
             extends: ['plugin:jest/all'],
             rules: {
                 'import/extensions': 'off',
                 'jest/no-hooks': 'off',
+                'jest/lowercase-name': 'off',
                 'sonarjs/no-identical-functions': 'off',
                 'sonarjs/no-duplicate-string': 'off',
             },

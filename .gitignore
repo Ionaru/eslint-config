@@ -16,6 +16,7 @@ dist/
 *.DS_Store
 
 # Application files
-src/assets/stylesheets/
+nok-errors.json
+ok-errors.json
 data/
 .env

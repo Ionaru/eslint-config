@@ -1,0 +1,6 @@
+{
+    "allowJs": true,
+    "files": [
+        "../eslint-config.spec.js"
+    ]
+}
