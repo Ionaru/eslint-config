@@ -23,11 +23,11 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: [
         '@typescript-eslint',
-        '@typescript-eslint/tslint',
-        'sonarjs',
-        'no-null',
         'import',
+        'no-null',
         'prefer-arrow',
+        'sonarjs',
+        'unicorn',
     ],
     rules: {
         '@typescript-eslint/adjacent-overload-signatures': 'error',
@@ -99,39 +99,11 @@ module.exports = {
         '@typescript-eslint/prefer-namespace-keyword': 'error',
         '@typescript-eslint/semi': ['error', 'always'],
         '@typescript-eslint/triple-slash-reference': 'error',
-        '@typescript-eslint/tslint/config': [
-            'error',
-            {
-                rules: {
-                    'jsdoc-format': [true, 'check-multiline-start'],
-                    'no-reference-import': true,
-                    'one-line': [
-                        true,
-                        'check-catch',
-                        'check-else',
-                        'check-finally',
-                        'check-open-brace',
-                        'check-whitespace',
-                    ],
-                    'prefer-conditional-expression': true,
-                    'whitespace': [
-                        true,
-                        'check-branch',
-                        'check-decl',
-                        'check-operator',
-                        'check-separator',
-                        'check-type',
-                        'check-typecast',
-                        'check-type-operator',
-                        'check-rest-spread',
-                    ],
-                },
-            },
-        ],
         '@typescript-eslint/type-annotation-spacing': 'error',
         '@typescript-eslint/unified-signatures': 'error',
         'arrow-body-style': 'error',
         'arrow-parens': ['error', 'always'],
+        'brace-style': 'error',
         'camelcase': [
             'error',
             {
@@ -250,6 +222,7 @@ module.exports = {
         ],
         'space-in-parens': ['error', 'never'],
         'spaced-comment': 'error',
+        'unicorn/prefer-ternary': 'error',
         'use-isnan': 'error',
         'valid-typeof': 'off',
     },
