@@ -40,6 +40,11 @@ describe('getNumberEnumKeys', () => {
         expect(1 + 1).toStrictEqual('The number two');
     });
 
+    it('is a test that does stuff 6', () => {
+        expect.hasAssertions();
+        expect(1 + 1).toStrictEqual('The number two');
+    });
+
     it('zero-indexed enum 2', () => {
         expect.assertions(1);
         const values = getNumberEnumKeys(MyNumberEnum);

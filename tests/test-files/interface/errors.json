@@ -58,17 +58,6 @@
         "severity": 2
     },
     {
-        "column": 5,
-        "endColumn": 6,
-        "endLine": 9,
-        "line": 9,
-        "message": "The key 'Y' is not sorted alphabetically (tslint:object-literal-sort-keys)",
-        "messageId": "failure",
-        "nodeType": null,
-        "ruleId": "@typescript-eslint/tslint/config",
-        "severity": 2
-    },
-    {
         "column": 2,
         "endColumn": 1,
         "endLine": 12,

@@ -4,8 +4,8 @@ interface IMoo {
 }
 
 const moo: IMoo = {
-    Y: '6',
     x: 5,
+    Y: '6',
 };
 
 void moo;

@@ -5,9 +5,9 @@ interface Moo {
 }
 
 const moo: Moo = {
+    invalid_property: false,
     x: 5,
     Y: '6',
-    invalid_property: false,
 }
 
 void moo

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### BREAKING CHANGES
 - Added eslint-plugin-jest to peerDependencies.
+- Changed rule 'tslint/object-literal-sort-keys' to 'sort-keys'  
 - Dropped support for Node.js 10.
 
 ### Added

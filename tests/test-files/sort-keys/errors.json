@@ -1,0 +1,13 @@
+[
+    {
+        "ruleId": "sort-keys",
+        "severity": 2,
+        "message": "Expected object keys to be in natural insensitive ascending order. 'a' should be before 'x'.",
+        "line": 1,
+        "column": 18,
+        "nodeType": "Property",
+        "messageId": "sortKeys",
+        "endLine": 1,
+        "endColumn": 19
+    }
+]
