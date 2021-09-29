@@ -1,9 +1,27 @@
 [
     {
+        "column": 23,
+        "endColumn": 36,
+        "endLine": 10,
+        "fix": {
+            "range": [
+                288,
+                301
+            ],
+            "text": "toBe"
+        },
+        "line": 10,
+        "message": "Use `toBe` when expecting primitive literals",
+        "messageId": "useToBe",
+        "nodeType": "Identifier",
+        "ruleId": "jest/prefer-to-be",
+        "severity": 2
+    },
+    {
         "column": 5,
         "endColumn": 7,
-        "endLine": 15,
-        "line": 8,
+        "endLine": 20,
+        "line": 13,
         "message": "Every test should have either `expect.assertions(<number of assertions>)` or `expect.hasAssertions()` as its first expression",
         "messageId": "haveExpectAssertions",
         "nodeType": "CallExpression",
@@ -14,8 +32,8 @@
                 "desc": "Add `expect.hasAssertions()`",
                 "fix": {
                     "range": [
-                        223,
-                        223
+                        365,
+                        365
                     ],
                     "text": "expect.hasAssertions();"
                 },
@@ -25,8 +43,8 @@
                 "desc": "Add `expect.assertions(<number of assertions>)`",
                 "fix": {
                     "range": [
-                        223,
-                        223
+                        365,
+                        365
                     ],
                     "text": "expect.assertions();"
                 },
