@@ -16,7 +16,7 @@ const getErrors = (fileToTest, project = path.join('tests', 'configs', 'test.tsc
     return cli.executeOnFiles(fileToTest);
 };
 
-describe('Self-lint', () => {
+describe('self-lint', () => {
 
     it('must not have any errors in Index.js', () => {
         expect.assertions(1);
@@ -35,7 +35,7 @@ describe('Self-lint', () => {
     });
 });
 
-describe('Validate ESLint configs on files', () => {
+describe('validate ESLint configs on files', () => {
 
     const filesPath = path.join('tests', 'test-files');
     const contents = fs.readdirSync(filesPath, {withFileTypes: true});
