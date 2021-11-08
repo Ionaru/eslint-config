@@ -2,36 +2,43 @@
 const fs = require('fs');
 const path = require('path');
 
-const eslint = require('eslint');
+const { ESLint } = require('eslint');
+
+const config = require('../index.js');
 
 const getErrors = (fileToTest, project = path.join('tests', 'configs', 'test.tsconfig.json')) => {
-    const CLIEngine = eslint.CLIEngine;
-
-    const cli = new CLIEngine({
-        configFile: 'index.js',
-        envs: ['node', 'es6'],
-        parserOptions: {project},
+    const engine = new ESLint({
+        baseConfig: config,
+        overrideConfig: {
+            env: {
+                es6: true,
+                node: true,
+            },
+            parserOptions: {project},
+        },
     });
 
-    return cli.executeOnFiles(fileToTest);
+    return engine.lintFiles([fileToTest]);
 };
 
 describe('self-lint', () => {
 
-    it('must not have any errors in Index.js', () => {
+    it('must not have any errors in Index.js', async () => {
         expect.assertions(1);
-        expect(getErrors(
+        const results = await getErrors(
             'index.js',
             path.join('tests', 'configs', 'index.tsconfig.json')
-        ).results[0].messages).toStrictEqual([]);
+        );
+        expect(results[0].messages).toStrictEqual([]);
     });
 
-    it('must not have any errors in eslint-config.spec.js', () => {
+    it('must not have any errors in eslint-config.spec.js', async () => {
         expect.assertions(1);
-        expect(getErrors(
+        const results = await getErrors(
             path.join('tests', 'eslint-config.spec.js'),
             path.join('tests', 'configs', 'testjs.tsconfig.json')
-        ).results[0].messages).toStrictEqual([]);
+        );
+        expect(results[0].messages).toStrictEqual([]);
     });
 });
 
@@ -48,11 +55,11 @@ describe('validate ESLint configs on files', () => {
         const notOkErrorsFilePath = path.join(filesPath, directory, 'nok-errors.json');
         for (const file of [notOkFilePath, notOkSpecFilePath]) {
             if (fs.existsSync(file)) {
-                it('nok.ts file must give errors that match defined errors.json', () => {
+                it('nok.ts file must give errors that match defined errors.json', async () => {
                     expect.assertions(1);
-                    const errors = getErrors(file).results[0].messages;
+                    const errors = await getErrors(file);
                     fs.writeFileSync(notOkErrorsFilePath, JSON.stringify(errors, undefined, 4));
-                    expect(errors).toStrictEqual(JSON.parse(fs.readFileSync(errorFilePath).toString()));
+                    expect(errors[0].messages).toStrictEqual(JSON.parse(fs.readFileSync(errorFilePath).toString()));
                 });
             }
         }
@@ -62,13 +69,13 @@ describe('validate ESLint configs on files', () => {
         const okErrorsFilePath = path.join(filesPath, directory, 'ok-errors.json');
         for (const file of [okFile, okSpecFile]) {
             if (fs.existsSync(file)) {
-                it(`ok.ts file must give no errors`, () => {
+                it(`ok.ts file must give no errors`, async () => {
                     expect.assertions(1);
-                    const errors = getErrors(file).results[0].messages;
+                    const errors = await getErrors(file);
                     if (errors.length) {
                         fs.writeFileSync(okErrorsFilePath, JSON.stringify(errors, undefined, 4));
                     }
-                    expect(errors).toStrictEqual([]);
+                    expect(errors[0].messages).toStrictEqual([]);
                 });
             }
         }
