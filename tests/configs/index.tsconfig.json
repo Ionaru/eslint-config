@@ -1,5 +1,7 @@
 {
-    "allowJs": true,
+    "compilerOptions": {
+        "allowJs": true
+    },
     "files": [
         "../../index.js"
     ]

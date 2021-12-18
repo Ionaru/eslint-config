@@ -1,5 +1,7 @@
 class MyClass {
 
+    private readonly privateString: 'secret!';
+
     public constructor(
         public readonly inputString: string,
     ) {

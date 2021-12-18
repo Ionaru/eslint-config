@@ -63,9 +63,36 @@ module.exports = {
         '@typescript-eslint/naming-convention': [
             'error',
             {
+                format: ['camelCase'],
+                selector: 'default',
+            },
+            {
+                format: ['camelCase'],
+                selector: 'variable',
+            },
+            {
+                format: ['camelCase'],
+                leadingUnderscore: 'allow',
+                selector: 'parameter',
+            },
+            {
+                format: ['PascalCase'],
+                selector: 'typeLike',
+            },
+            {
                 format: ['PascalCase'],
                 prefix: ['I'],
                 selector: 'interface',
+            },
+            {
+                format: ['UPPER_CASE'],
+                selector: 'enumMember',
+            },
+            {
+                // eslint-disable-next-line no-null/no-null
+                format: null,
+                modifiers: ['destructured'],
+                selector: ['variable', 'parameter'],
             },
         ],
         '@typescript-eslint/no-empty-function': 'error',
@@ -104,14 +131,6 @@ module.exports = {
         'arrow-body-style': 'error',
         'arrow-parens': ['error', 'always'],
         'brace-style': 'error',
-        'camelcase': [
-            'error',
-            {
-                ignoreDestructuring: true,
-                ignoreImports: true,
-                properties: 'never',
-            },
-        ],
         'comma-dangle': ['error', 'always-multiline'],
         'complexity': 'off',
         'constructor-super': 'error',
@@ -142,13 +161,17 @@ module.exports = {
             'error',
             4,
             {
+                // eslint-disable-next-line @typescript-eslint/naming-convention
                 FunctionDeclaration: {
                     parameters: 'first',
                 },
+                // eslint-disable-next-line @typescript-eslint/naming-convention
                 FunctionExpression: {
                     parameters: 'first',
                 },
+                // eslint-disable-next-line @typescript-eslint/naming-convention
                 ObjectExpression: 'first',
+                // eslint-disable-next-line @typescript-eslint/naming-convention
                 SwitchCase: 1,
             },
         ],

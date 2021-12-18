@@ -1,11 +1,13 @@
 interface IMoo {
+    validProperty: true;
     x: number;
-    Y: string;
+    y: string;
 }
 
 const moo: IMoo = {
+    validProperty: true,
     x: 5,
-    Y: '6',
+    y: '6',
 };
 
 void moo;

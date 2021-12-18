@@ -1,96 +1,129 @@
 [
     {
-        "column": 11,
-        "endColumn": 14,
-        "endLine": 1,
-        "line": 1,
-        "message": "Interface name `Moo` must have one of the following prefixes: I",
-        "messageId": "missingAffix",
-        "nodeType": "Identifier",
         "ruleId": "@typescript-eslint/naming-convention",
-        "severity": 2
+        "severity": 2,
+        "message": "Interface name `Moo` must have one of the following prefixes: I",
+        "line": 1,
+        "column": 11,
+        "nodeType": "Identifier",
+        "messageId": "missingAffix",
+        "endLine": 1,
+        "endColumn": 14
     },
     {
+        "ruleId": "@typescript-eslint/member-delimiter-style",
+        "severity": 2,
+        "message": "Expected a semicolon.",
+        "line": 2,
         "column": 14,
-        "endColumn": 14,
+        "nodeType": "Identifier",
+        "messageId": "expectedSemi",
         "endLine": 2,
+        "endColumn": 14,
         "fix": {
             "range": [
                 29,
                 29
             ],
             "text": ";"
-        },
-        "line": 2,
-        "message": "Expected a semicolon.",
-        "messageId": "expectedSemi",
-        "nodeType": "Identifier",
-        "ruleId": "@typescript-eslint/member-delimiter-style",
-        "severity": 2
+        }
     },
     {
-        "column": 14,
-        "endColumn": 14,
+        "ruleId": "@typescript-eslint/naming-convention",
+        "severity": 2,
+        "message": "Type Property name `Y` must match one of the following formats: camelCase",
+        "line": 3,
+        "column": 5,
+        "nodeType": "Identifier",
+        "messageId": "doesNotMatchFormat",
         "endLine": 3,
+        "endColumn": 6
+    },
+    {
+        "ruleId": "@typescript-eslint/member-delimiter-style",
+        "severity": 2,
+        "message": "Expected a semicolon.",
+        "line": 3,
+        "column": 14,
+        "nodeType": "Identifier",
+        "messageId": "expectedSemi",
+        "endLine": 3,
+        "endColumn": 14,
         "fix": {
             "range": [
                 43,
                 43
             ],
             "text": ";"
-        },
-        "line": 3,
-        "message": "Expected a semicolon.",
-        "messageId": "expectedSemi",
-        "nodeType": "Identifier",
-        "ruleId": "@typescript-eslint/member-delimiter-style",
-        "severity": 2
+        }
     },
     {
-        "column": 5,
-        "endColumn": 21,
-        "endLine": 4,
+        "ruleId": "@typescript-eslint/naming-convention",
+        "severity": 2,
+        "message": "Type Property name `invalid_property` must match one of the following formats: camelCase",
         "line": 4,
-        "message": "Identifier 'invalid_property' is not in camel case.",
-        "messageId": "notCamelCase",
+        "column": 5,
         "nodeType": "Identifier",
-        "ruleId": "camelcase",
-        "severity": 2
+        "messageId": "doesNotMatchFormat",
+        "endLine": 4,
+        "endColumn": 21
     },
     {
+        "ruleId": "@typescript-eslint/naming-convention",
+        "severity": 2,
+        "message": "Object Literal Property name `invalid_property` must match one of the following formats: camelCase",
+        "line": 8,
+        "column": 5,
+        "nodeType": "Identifier",
+        "messageId": "doesNotMatchFormat",
+        "endLine": 8,
+        "endColumn": 21
+    },
+    {
+        "ruleId": "@typescript-eslint/naming-convention",
+        "severity": 2,
+        "message": "Object Literal Property name `Y` must match one of the following formats: camelCase",
+        "line": 10,
+        "column": 5,
+        "nodeType": "Identifier",
+        "messageId": "doesNotMatchFormat",
+        "endLine": 10,
+        "endColumn": 6
+    },
+    {
+        "ruleId": "@typescript-eslint/semi",
+        "severity": 2,
+        "message": "Missing semicolon.",
+        "line": 11,
         "column": 2,
-        "endColumn": 1,
+        "nodeType": "VariableDeclaration",
+        "messageId": "missingSemi",
         "endLine": 12,
+        "endColumn": 1,
         "fix": {
             "range": [
                 149,
                 149
             ],
             "text": ";"
-        },
-        "line": 11,
-        "message": "Missing semicolon.",
-        "messageId": "missingSemi",
-        "nodeType": "VariableDeclaration",
-        "ruleId": "@typescript-eslint/semi",
-        "severity": 2
+        }
     },
     {
+        "ruleId": "@typescript-eslint/semi",
+        "severity": 2,
+        "message": "Missing semicolon.",
+        "line": 13,
         "column": 9,
-        "endColumn": 1,
+        "nodeType": "ExpressionStatement",
+        "messageId": "missingSemi",
         "endLine": 14,
+        "endColumn": 1,
         "fix": {
             "range": [
                 159,
                 159
             ],
             "text": ";"
-        },
-        "line": 13,
-        "message": "Missing semicolon.",
-        "messageId": "missingSemi",
-        "nodeType": "ExpressionStatement",
-        "ruleId": "@typescript-eslint/semi",
-        "severity": 2
+        }
     }
 ]
