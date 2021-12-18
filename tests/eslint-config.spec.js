@@ -23,7 +23,7 @@ const getErrors = (fileToTest, project = path.join('tests', 'configs', 'test.tsc
 
 describe('self-lint', () => {
 
-    it('must not have any errors in Index.js', async () => {
+    it('must not have any errors in index.js', async () => {
         expect.assertions(1);
         const results = await getErrors(
             'index.js',
