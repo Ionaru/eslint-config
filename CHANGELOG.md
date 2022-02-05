@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for eslint-plugin-unicorn@40
 
 ## [6.0.0] - 2021-12-18
-### BREAKING CHANGED
+### BREAKING CHANGES
 - Changed rule 'camelCase' to '@typescript-eslint/naming-convention'
 
 ### Added
