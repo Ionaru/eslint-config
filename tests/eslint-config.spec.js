@@ -72,9 +72,7 @@ describe('validate ESLint configs on files', () => {
                 it(`ok.ts file must give no errors`, async () => {
                     expect.assertions(1);
                     const errors = await getErrors(file);
-                    if (errors.length) {
-                        fs.writeFileSync(okErrorsFilePath, JSON.stringify(errors, undefined, 4));
-                    }
+                    fs.writeFileSync(okErrorsFilePath, JSON.stringify(errors, undefined, 4));
                     expect(errors[0].messages).toStrictEqual([]);
                 });
             }
