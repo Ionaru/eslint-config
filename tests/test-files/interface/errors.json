@@ -29,17 +29,6 @@
         }
     },
     {
-        "ruleId": "@typescript-eslint/naming-convention",
-        "severity": 2,
-        "message": "Type Property name `Y` must match one of the following formats: camelCase",
-        "line": 3,
-        "column": 5,
-        "nodeType": "Identifier",
-        "messageId": "doesNotMatchFormat",
-        "endLine": 3,
-        "endColumn": 6
-    },
-    {
         "ruleId": "@typescript-eslint/member-delimiter-style",
         "severity": 2,
         "message": "Expected a semicolon.",
@@ -56,39 +45,6 @@
             ],
             "text": ";"
         }
-    },
-    {
-        "ruleId": "@typescript-eslint/naming-convention",
-        "severity": 2,
-        "message": "Type Property name `invalid_property` must match one of the following formats: camelCase",
-        "line": 4,
-        "column": 5,
-        "nodeType": "Identifier",
-        "messageId": "doesNotMatchFormat",
-        "endLine": 4,
-        "endColumn": 21
-    },
-    {
-        "ruleId": "@typescript-eslint/naming-convention",
-        "severity": 2,
-        "message": "Object Literal Property name `invalid_property` must match one of the following formats: camelCase",
-        "line": 8,
-        "column": 5,
-        "nodeType": "Identifier",
-        "messageId": "doesNotMatchFormat",
-        "endLine": 8,
-        "endColumn": 21
-    },
-    {
-        "ruleId": "@typescript-eslint/naming-convention",
-        "severity": 2,
-        "message": "Object Literal Property name `Y` must match one of the following formats: camelCase",
-        "line": 10,
-        "column": 5,
-        "nodeType": "Identifier",
-        "messageId": "doesNotMatchFormat",
-        "endLine": 10,
-        "endColumn": 6
     },
     {
         "ruleId": "@typescript-eslint/semi",

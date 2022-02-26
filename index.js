@@ -64,6 +64,21 @@ module.exports = {
             'error',
             {
                 format: ['camelCase'],
+                leadingUnderscore: 'allow',
+                selector: 'classProperty',
+            },
+            {
+                // eslint-disable-next-line no-null/no-null
+                format: null,
+                selector: 'objectLiteralProperty',
+            },
+            {
+                // eslint-disable-next-line no-null/no-null
+                format: null,
+                selector: 'typeProperty',
+            },
+            {
+                format: ['camelCase'],
                 selector: 'default',
             },
             {
@@ -206,7 +221,12 @@ module.exports = {
         'no-throw-literal': 'error',
         'no-trailing-spaces': 'error',
         'no-undef-init': 'error',
-        'no-underscore-dangle': 'error',
+        'no-underscore-dangle': [
+            'error',
+            {
+                allowAfterThis: true,
+            },
+        ],
         'no-unsafe-finally': 'error',
         'no-unused-expressions': 'error',
         'no-unused-labels': 'error',

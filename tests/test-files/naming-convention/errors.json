@@ -1,0 +1,57 @@
+[
+    {
+        "ruleId": "@typescript-eslint/naming-convention",
+        "severity": 2,
+        "message": "Class Method name `_someFunction` must match one of the following formats: camelCase",
+        "line": 6,
+        "column": 13,
+        "nodeType": "Identifier",
+        "messageId": "doesNotMatchFormat",
+        "endLine": 6,
+        "endColumn": 26
+    },
+    {
+        "ruleId": "@typescript-eslint/naming-convention",
+        "severity": 2,
+        "message": "Variable name `_privateFunction` must match one of the following formats: camelCase",
+        "line": 11,
+        "column": 7,
+        "nodeType": "Identifier",
+        "messageId": "doesNotMatchFormat",
+        "endLine": 11,
+        "endColumn": 23
+    },
+    {
+        "ruleId": "no-underscore-dangle",
+        "severity": 2,
+        "message": "Unexpected dangling '_' in '_privateFunction'.",
+        "line": 11,
+        "column": 7,
+        "nodeType": "VariableDeclarator",
+        "messageId": "unexpectedUnderscore",
+        "endLine": 11,
+        "endColumn": 41
+    },
+    {
+        "ruleId": "@typescript-eslint/naming-convention",
+        "severity": 2,
+        "message": "Class name `boo` must match one of the following formats: PascalCase",
+        "line": 17,
+        "column": 7,
+        "nodeType": "Identifier",
+        "messageId": "doesNotMatchFormat",
+        "endLine": 17,
+        "endColumn": 10
+    },
+    {
+        "ruleId": "@typescript-eslint/naming-convention",
+        "severity": 2,
+        "message": "Variable name `MyProp` must match one of the following formats: camelCase",
+        "line": 20,
+        "column": 7,
+        "nodeType": "Identifier",
+        "messageId": "doesNotMatchFormat",
+        "endLine": 20,
+        "endColumn": 13
+    }
+]
