@@ -5,6 +5,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!-- ## [Unreleased] -->
+## [7.0.1] - 2022-05-12
+### No changes
+- Version bump.
+
 ## [7.0.0] - 2022-05-12
 ### BREAKING CHANGES
 - Added requirement for trailing delimiters in single-line interfaces and type literals in `@typescript-eslint/member-delimiter-style` rule.
@@ -126,7 +130,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial version.
 
-[Unreleased]: https://github.com/Ionaru/eslint-config/compare/7.0.0...HEAD
+[Unreleased]: https://github.com/Ionaru/eslint-config/compare/7.0.1...HEAD
+[7.0.1]: https://github.com/Ionaru/eslint-config/compare/7.0.0...7.0.1
 [7.0.0]: https://github.com/Ionaru/eslint-config/compare/6.3.0...7.0.0
 [6.3.0]: https://github.com/Ionaru/eslint-config/compare/6.2.1...6.3.0
 [6.2.1]: https://github.com/Ionaru/eslint-config/compare/6.2.0...6.2.1
