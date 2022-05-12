@@ -53,6 +53,21 @@ module.exports = {
                     delimiter: 'semi',
                     requireLast: true,
                 },
+                multilineDetection: 'brackets',
+                overrides: {
+                    interface: {
+                        singleline: {
+                            delimiter: 'semi',
+                            requireLast: true,
+                        },
+                    },
+                    typeLiteral: {
+                        singleline: {
+                            delimiter: 'semi',
+                            requireLast: true,
+                        },
+                    },
+                },
                 singleline: {
                     delimiter: 'semi',
                     requireLast: false,

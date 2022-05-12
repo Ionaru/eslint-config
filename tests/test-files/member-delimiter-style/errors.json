@@ -1,0 +1,74 @@
+[
+    {
+        "ruleId": "@typescript-eslint/member-delimiter-style",
+        "severity": 2,
+        "message": "Expected a semicolon.",
+        "line": 4,
+        "column": 17,
+        "nodeType": "Identifier",
+        "messageId": "expectedSemi",
+        "endLine": 4,
+        "endColumn": 17,
+        "fix": {
+            "range": [
+                89,
+                89
+            ],
+            "text": ";"
+        }
+    },
+    {
+        "ruleId": "@typescript-eslint/member-delimiter-style",
+        "severity": 2,
+        "message": "Expected a semicolon.",
+        "line": 5,
+        "column": 20,
+        "nodeType": "Identifier",
+        "messageId": "expectedSemi",
+        "endLine": 5,
+        "endColumn": 20,
+        "fix": {
+            "range": [
+                109,
+                109
+            ],
+            "text": ";"
+        }
+    },
+    {
+        "ruleId": "@typescript-eslint/member-delimiter-style",
+        "severity": 2,
+        "message": "Expected a semicolon.",
+        "line": 8,
+        "column": 30,
+        "nodeType": "Identifier",
+        "messageId": "expectedSemi",
+        "endLine": 8,
+        "endColumn": 30,
+        "fix": {
+            "range": [
+                142,
+                142
+            ],
+            "text": ";"
+        }
+    },
+    {
+        "ruleId": "@typescript-eslint/member-delimiter-style",
+        "severity": 2,
+        "message": "Expected a semicolon.",
+        "line": 10,
+        "column": 25,
+        "nodeType": "Identifier",
+        "messageId": "expectedSemi",
+        "endLine": 10,
+        "endColumn": 25,
+        "fix": {
+            "range": [
+                170,
+                170
+            ],
+            "text": ";"
+        }
+    }
+]
