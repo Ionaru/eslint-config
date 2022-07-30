@@ -1,7 +1,7 @@
 describe('getNumberEnumKeys', () => {
 
-    beforeEach(() => {/* A hook */});
     beforeAll(() => {/* A hook */});
+    beforeEach(() => {/* A hook */});
     afterEach(() => {/* A hook */});
     afterAll(() => {/* A hook */});
 

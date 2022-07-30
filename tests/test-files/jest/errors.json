@@ -1,5 +1,16 @@
 [
     {
+        "ruleId": "jest/prefer-hooks-in-order",
+        "severity": 2,
+        "message": "`beforeAll` hooks should be before any `beforeEach` hooks",
+        "line": 4,
+        "column": 5,
+        "nodeType": "CallExpression",
+        "messageId": "reorderHooks",
+        "endLine": 4,
+        "endColumn": 36
+    },
+    {
         "column": 23,
         "endColumn": 36,
         "endLine": 10,
