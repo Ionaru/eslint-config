@@ -15,6 +15,7 @@ module.exports = {
                 'import/extensions': 'off',
                 'jest/lowercase-name': 'off',
                 'jest/no-hooks': 'off',
+                'jest/prefer-each': 'off',
                 'sonarjs/no-duplicate-string': 'off',
                 'sonarjs/no-identical-functions': 'off',
             },

@@ -8,6 +8,41 @@
         "nodeType": "MethodDefinition",
         "messageId": "missingAccessibility",
         "endLine": 10,
-        "endColumn": 6
+        "endColumn": 6,
+        "suggestions": [
+            {
+                "messageId": "addExplicitAccessibility",
+                "data": {
+                    "type": "public"
+                },
+                "fix": {
+                    "range": [105, 105],
+                    "text": "public "
+                },
+                "desc": "Add 'public' accessibility modifier"
+            },
+            {
+                "messageId": "addExplicitAccessibility",
+                "data": {
+                    "type": "private"
+                },
+                "fix": {
+                    "range": [105, 105],
+                    "text": "private "
+                },
+                "desc": "Add 'private' accessibility modifier"
+            },
+            {
+                "messageId": "addExplicitAccessibility",
+                "data": {
+                    "type": "protected"
+                },
+                "fix": {
+                    "range": [105, 105],
+                    "text": "protected "
+                },
+                "desc": "Add 'protected' accessibility modifier"
+            }
+        ]
     }
 ]
