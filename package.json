@@ -1,6 +1,6 @@
 {
     "name": "@ionaru/eslint-config",
-    "version": "8.4.0",
+    "version": "8.5.0",
     "description": "My custom flavoured config for ESLint",
     "main": "index.js",
     "files": [
