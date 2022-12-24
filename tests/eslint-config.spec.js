@@ -6,20 +6,20 @@ const { ESLint } = require('eslint');
 
 const config = require('../index.js');
 
-const getErrors = (fileToTest, project = path.join('tests', 'configs', 'test.tsconfig.json')) => {
-    const engine = new ESLint({
-        baseConfig: config,
-        overrideConfig: {
-            env: {
-                es6: true,
-                node: true,
-            },
-            parserOptions: {project},
+const getEngine = (project, customConfig = config) => new ESLint({
+    baseConfig: customConfig,
+    overrideConfig: {
+        env: {
+            es6: true,
+            node: true,
         },
-    });
+        parserOptions: {project},
+    },
+});
 
-    return engine.lintFiles([fileToTest]);
-};
+const getErrors = (
+    fileToTest, project = path.join('tests', 'configs', 'test.tsconfig.json')
+) => getEngine(project).lintFiles([fileToTest]);
 
 describe('self-lint', () => {
 
@@ -39,6 +39,58 @@ describe('self-lint', () => {
             path.join('tests', 'configs', 'testjs.tsconfig.json')
         );
         expect(results[0].messages).toStrictEqual([]);
+    });
+});
+
+describe('check for unneeded rules', () => {
+
+    it('must not define custom rules with the same options as defaults', async () => {
+        expect.assertions(4);
+
+        const configWithoutCustomRules = {
+            ...config,
+            rules: {},
+        };
+
+        const configOnlyCustomRules = {
+            ...config,
+            extends: [],
+        };
+
+        const engine1 = getEngine(path.join('tests', 'configs', 'index.tsconfig.json'), configWithoutCustomRules);
+        const engine2 = getEngine(path.join('tests', 'configs', 'index.tsconfig.json'), configOnlyCustomRules);
+        const config1 = await engine1.calculateConfigForFile('index.js');
+        const config2 = await engine2.calculateConfigForFile('index.js');
+
+        const duplicateRules = Object.keys(config2.rules).filter((rule) => config1.rules[rule]);
+        for (const duplicateRule of duplicateRules) {
+            expect(config1.rules[duplicateRule]).not.toStrictEqual(config2.rules[duplicateRule]);
+        }
+    });
+
+    it('must not disable rules that were not enabled', async () => {
+        expect.assertions(3);
+
+        const configWithoutCustomRules = {
+            ...config,
+            rules: {},
+        };
+
+        const configOnlyCustomRules = {
+            ...config,
+            extends: [],
+        };
+
+        const engine1 = getEngine(path.join('tests', 'configs', 'index.tsconfig.json'), configWithoutCustomRules);
+        const engine2 = getEngine(path.join('tests', 'configs', 'index.tsconfig.json'), configOnlyCustomRules);
+        const config1 = await engine1.calculateConfigForFile('index.js');
+        const config2 = await engine2.calculateConfigForFile('index.js');
+
+        // Get all customer rules that are disabled
+        const disabledRules = Object.keys(config2.rules).filter((rule) => config2.rules[rule].at(0) === 'off');
+        for (const disabledRule of disabledRules) {
+            expect(config1.rules[disabledRule]).toBeDefined();
+        }
     });
 });
 
