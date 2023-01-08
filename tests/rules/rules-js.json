@@ -522,7 +522,9 @@
             "allowAfterThisConstructor": false,
             "enforceInMethodNames": false,
             "allowFunctionParams": true,
-            "enforceInClassFields": false
+            "enforceInClassFields": false,
+            "allowInArrayDestructuring": true,
+            "allowInObjectDestructuring": true
         }
     ],
     "no-unexpected-multiline": [
