@@ -257,10 +257,10 @@
         "error"
     ],
     "import/default": [
-        2
+        "error"
     ],
     "import/export": [
-        2
+        "error"
     ],
     "import/extensions": [
         "error",
@@ -273,19 +273,19 @@
         "off"
     ],
     "import/namespace": [
-        2
+        "error"
     ],
     "import/no-duplicates": [
-        1
+        "warn"
     ],
     "import/no-named-as-default": [
-        1
+        "warn"
     ],
     "import/no-named-as-default-member": [
-        1
+        "warn"
     ],
     "import/no-unresolved": [
-        2
+        "error"
     ],
     "import/order": [
         "error",

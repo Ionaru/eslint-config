@@ -3,8 +3,7 @@ module.exports = {
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:sonarjs/recommended',
-        'plugin:import/errors',
-        'plugin:import/warnings',
+        'plugin:import/recommended',
         'plugin:import/typescript',
     ],
     overrides: [

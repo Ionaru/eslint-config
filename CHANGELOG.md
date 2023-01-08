@@ -6,7 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Fixed
-- unneeded rules being defined in the config.
+- Unneeded rules being defined in the config.
+
+### Changed
+- Use import/recommended instead of import/warnings and import/errors.
 
 ## [8.5.0] - 2022-12-07
 ### Added
