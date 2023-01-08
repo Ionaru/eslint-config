@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "allowJs": true
+    },
+    "files": [
+        "../dummy-files/file.js",
+        "../dummy-files/file.ts",
+        "../dummy-files/file.spec.js",
+        "../dummy-files/file.spec.ts"
+    ]
+}

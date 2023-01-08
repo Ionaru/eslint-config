@@ -18,7 +18,7 @@ const getEngine = (project, customConfig = config) => new ESLint({
 });
 
 const getErrors = (
-    fileToTest, project = path.join('tests', 'configs', 'test.tsconfig.json')
+    fileToTest, project = path.join('tests', 'configs', 'test.tsconfig.json'),
 ) => getEngine(project).lintFiles([fileToTest]);
 
 describe('self-lint', () => {
@@ -27,7 +27,7 @@ describe('self-lint', () => {
         expect.assertions(1);
         const results = await getErrors(
             'index.js',
-            path.join('tests', 'configs', 'index.tsconfig.json')
+            path.join('tests', 'configs', 'index.tsconfig.json'),
         );
         expect(results[0].messages).toStrictEqual([]);
     });
@@ -36,7 +36,7 @@ describe('self-lint', () => {
         expect.assertions(1);
         const results = await getErrors(
             path.join('tests', 'eslint-config.spec.js'),
-            path.join('tests', 'configs', 'testjs.tsconfig.json')
+            path.join('tests', 'configs', 'testjs.tsconfig.json'),
         );
         expect(results[0].messages).toStrictEqual([]);
     });
@@ -44,25 +44,92 @@ describe('self-lint', () => {
 
 describe('check for unexpected changes', () => {
 
-    it('must not have any unexpected changes in rules.json', async () => {
+    it('must not have any unexpected changes in rules.json for js files', async () => {
 
         expect.assertions(1);
 
-        const rulesPath = path.join('tests', 'rules.json');
-        const tsConfigPath = path.join('tests', 'configs', 'index.tsconfig.json');
+        const sourceFile = 'file.js';
+        const rulesPath = path.join('tests', 'rules', 'rules-js.json');
+        const tsConfigPath = path.join('tests', 'configs', 'dummy.tsconfig.json');
 
         const rules = JSON.parse(fs.readFileSync(rulesPath, 'utf8'));
         const engine = getEngine(tsConfigPath);
-        const ESLintConfig = await engine.calculateConfigForFile('index.js');
-        const sortedKeys = Object.keys(ESLintConfig.rules).sort();
+        const lintConfig = await engine.calculateConfigForFile(sourceFile);
+        const sortedKeys = Object.keys(lintConfig.rules).sort();
         const sortedRules = sortedKeys.reduce((obj, key) => {
-            obj[key] = ESLintConfig.rules[key];
+            obj[key] = lintConfig.rules[key];
             return obj;
         }, {});
 
-        expect(sortedRules).toStrictEqual(rules);
+        fs.writeFileSync(rulesPath, JSON.stringify(sortedRules, undefined, 4));
 
-        fs.writeFileSync(rulesPath, JSON.stringify(sortedRules, null, 4));
+        expect(sortedRules).toStrictEqual(rules);
+    });
+
+    it('must not have any unexpected changes in rules.json for ts files', async () => {
+
+        expect.assertions(1);
+
+        const sourceFile = 'file.ts';
+        const rulesPath = path.join('tests', 'rules', 'rules-ts.json');
+        const tsConfigPath = path.join('tests', 'configs', 'dummy.tsconfig.json');
+
+        const rules = JSON.parse(fs.readFileSync(rulesPath, 'utf8'));
+        const engine = getEngine(tsConfigPath);
+        const lintConfig = await engine.calculateConfigForFile(sourceFile);
+        const sortedKeys = Object.keys(lintConfig.rules).sort();
+        const sortedRules = sortedKeys.reduce((obj, key) => {
+            obj[key] = lintConfig.rules[key];
+            return obj;
+        }, {});
+
+        fs.writeFileSync(rulesPath, JSON.stringify(sortedRules, undefined, 4));
+
+        expect(sortedRules).toStrictEqual(rules);
+    });
+
+    it('must not have any unexpected changes in rules.json for spec.js files', async () => {
+
+        expect.assertions(1);
+
+        const sourceFile = 'file.spec.js';
+        const rulesPath = path.join('tests', 'rules', 'rules-spec-js.json');
+        const tsConfigPath = path.join('tests', 'configs', 'dummy.tsconfig.json');
+
+        const rules = JSON.parse(fs.readFileSync(rulesPath, 'utf8'));
+        const engine = getEngine(tsConfigPath);
+        const lintConfig = await engine.calculateConfigForFile(sourceFile);
+        const sortedKeys = Object.keys(lintConfig.rules).sort();
+        const sortedRules = sortedKeys.reduce((obj, key) => {
+            obj[key] = lintConfig.rules[key];
+            return obj;
+        }, {});
+
+        fs.writeFileSync(rulesPath, JSON.stringify(sortedRules, undefined, 4));
+
+        expect(sortedRules).toStrictEqual(rules);
+    });
+
+    it('must not have any unexpected changes in rules.json for spec.ts files', async () => {
+
+        expect.assertions(1);
+
+        const sourceFile = 'file.spec.ts';
+        const rulesPath = path.join('tests', 'rules', 'rules-spec-ts.json');
+        const tsConfigPath = path.join('tests', 'configs', 'dummy.tsconfig.json');
+
+        const rules = JSON.parse(fs.readFileSync(rulesPath, 'utf8'));
+        const engine = getEngine(tsConfigPath);
+        const lintConfig = await engine.calculateConfigForFile(sourceFile);
+        const sortedKeys = Object.keys(lintConfig.rules).sort();
+        const sortedRules = sortedKeys.reduce((obj, key) => {
+            obj[key] = lintConfig.rules[key];
+            return obj;
+        }, {});
+
+        fs.writeFileSync(rulesPath, JSON.stringify(sortedRules, undefined, 4));
+
+        expect(sortedRules).toStrictEqual(rules);
     });
 
 });
