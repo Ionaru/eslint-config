@@ -13,7 +13,7 @@ const getEngine = (project, customConfig = config) => new ESLint({
             es6: true,
             node: true,
         },
-        parserOptions: {project},
+        parserOptions: { project },
     },
 });
 
@@ -40,6 +40,31 @@ describe('self-lint', () => {
         );
         expect(results[0].messages).toStrictEqual([]);
     });
+});
+
+describe('check for unexpected changes', () => {
+
+    it('must not have any unexpected changes in rules.json', async () => {
+
+        expect.assertions(1);
+
+        const rulesPath = path.join('tests', 'rules.json');
+        const tsConfigPath = path.join('tests', 'configs', 'index.tsconfig.json');
+
+        const rules = JSON.parse(fs.readFileSync(rulesPath, 'utf8'));
+        const engine = getEngine(tsConfigPath);
+        const ESLintConfig = await engine.calculateConfigForFile('index.js');
+        const sortedKeys = Object.keys(ESLintConfig.rules).sort();
+        const sortedRules = sortedKeys.reduce((obj, key) => {
+            obj[key] = ESLintConfig.rules[key];
+            return obj;
+        }, {});
+
+        expect(sortedRules).toStrictEqual(rules);
+
+        fs.writeFileSync(rulesPath, JSON.stringify(sortedRules, null, 4));
+    });
+
 });
 
 describe('check for unneeded rules', () => {
@@ -97,7 +122,7 @@ describe('check for unneeded rules', () => {
 describe('validate ESLint configs on files', () => {
 
     const filesPath = path.join('tests', 'test-files');
-    const contents = fs.readdirSync(filesPath, {withFileTypes: true});
+    const contents = fs.readdirSync(filesPath, { withFileTypes: true });
     const directories = contents.filter((content) => content.isDirectory()).map((dir) => dir.name);
 
     describe.each(directories)('directory: %s', (directory) => {
