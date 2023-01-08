@@ -24,7 +24,6 @@ module.exports = {
     plugins: [
         '@typescript-eslint',
         'import',
-        'no-null',
         'prefer-arrow',
         'sonarjs',
         'unicorn',
@@ -81,12 +80,12 @@ module.exports = {
                 selector: 'classProperty',
             },
             {
-                // eslint-disable-next-line no-null/no-null
+                // eslint-disable-next-line unicorn/no-null
                 format: null,
                 selector: 'objectLiteralProperty',
             },
             {
-                // eslint-disable-next-line no-null/no-null
+                // eslint-disable-next-line unicorn/no-null
                 format: null,
                 selector: 'typeProperty',
             },
@@ -117,7 +116,7 @@ module.exports = {
                 selector: 'enumMember',
             },
             {
-                // eslint-disable-next-line no-null/no-null
+                // eslint-disable-next-line unicorn/no-null
                 format: null,
                 modifiers: ['destructured'],
                 selector: ['variable', 'parameter'],
@@ -209,7 +208,6 @@ module.exports = {
         'no-multiple-empty-lines': 'error',
         'no-new-func': 'error',
         'no-new-wrappers': 'error',
-        'no-null/no-null': 'error',
         'no-return-await': 'error',
         'no-sequences': 'error',
         'no-template-curly-in-string': 'error',
@@ -257,6 +255,7 @@ module.exports = {
         ],
         'space-in-parens': ['error', 'never'],
         'spaced-comment': 'error',
+        'unicorn/no-null': 'error',
         'unicorn/prefer-ternary': 'error',
         'valid-typeof': 'off',
     },

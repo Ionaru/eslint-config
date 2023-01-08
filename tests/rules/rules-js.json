@@ -460,9 +460,6 @@
     "no-nonoctal-decimal-escape": [
         "error"
     ],
-    "no-null/no-null": [
-        "error"
-    ],
     "no-obj-calls": [
         "error"
     ],
@@ -719,6 +716,9 @@
         "never"
     ],
     "spaced-comment": [
+        "error"
+    ],
+    "unicorn/no-null": [
         "error"
     ],
     "unicorn/prefer-ternary": [

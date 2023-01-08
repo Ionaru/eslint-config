@@ -9,7 +9,7 @@ My custom flavoured config for ESLint based on my standard TSLint configuration.
 
 ### Install
 ```
-npm install -D @ionaru/eslint-config eslint @typescript-eslint/eslint-plugin eslint-plugin-import eslint-plugin-jest eslint-plugin-no-null eslint-plugin-prefer-arrow eslint-plugin-sonarjs eslint-plugin-unicorn
+npm install -D @ionaru/eslint-config eslint @typescript-eslint/eslint-plugin eslint-plugin-import eslint-plugin-jest eslint-plugin-prefer-arrow eslint-plugin-sonarjs eslint-plugin-unicorn
 ```
 
 ### Configuration
