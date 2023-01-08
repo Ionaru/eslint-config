@@ -179,7 +179,7 @@ describe('check for unneeded rules', () => {
         const config2 = await engine2.calculateConfigForFile('index.js');
 
         // Get all customer rules that are disabled
-        const disabledRules = Object.keys(config2.rules).filter((rule) => config2.rules[rule].at(0) === 'off');
+        const disabledRules = Object.keys(config2.rules).filter((rule) => config2.rules[rule][0] === 'off');
         for (const disabledRule of disabledRules) {
             expect(config1.rules[disabledRule]).toBeDefined();
         }
