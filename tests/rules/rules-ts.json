@@ -292,9 +292,11 @@
         {
             "alphabetize": {
                 "caseInsensitive": true,
-                "order": "asc"
+                "order": "asc",
+                "orderImportKind": "ignore"
             },
             "newlines-between": "always",
+            "distinctGroup": true,
             "warnOnUnassignedImports": false
         }
     ],

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### BREAKING CHANGES
 - Removed eslint-plugin-no-null in favor of the eslint-plugin-unicorn rule.
 
+### Added
+- Support for eslint-plugin-sonarjs@0.18
+
 ### Fixed
 - Unneeded rules being defined in the config.
 
