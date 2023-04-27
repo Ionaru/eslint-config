@@ -46,12 +46,12 @@
     {
         "ruleId": "@typescript-eslint/naming-convention",
         "severity": 2,
-        "message": "Variable name `MyProp` must match one of the following formats: camelCase",
+        "message": "Variable name `MyProperty` must match one of the following formats: camelCase",
         "line": 20,
         "column": 7,
         "nodeType": "Identifier",
         "messageId": "doesNotMatchFormat",
         "endLine": 20,
-        "endColumn": 13
+        "endColumn": 17
     }
 ]

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const { ESLint } = require('eslint');
 
@@ -56,9 +56,9 @@ describe('check for unexpected changes', () => {
         const engine = getEngine(tsConfigPath);
         const lintConfig = await engine.calculateConfigForFile(sourceFile);
         const sortedKeys = Object.keys(lintConfig.rules).sort();
-        const sortedRules = sortedKeys.reduce((obj, key) => {
-            obj[key] = lintConfig.rules[key];
-            return obj;
+        const sortedRules = sortedKeys.reduce((object, key) => {
+            object[key] = lintConfig.rules[key];
+            return object;
         }, {});
 
         fs.writeFileSync(rulesPath, JSON.stringify(sortedRules, undefined, 4));
@@ -78,9 +78,9 @@ describe('check for unexpected changes', () => {
         const engine = getEngine(tsConfigPath);
         const lintConfig = await engine.calculateConfigForFile(sourceFile);
         const sortedKeys = Object.keys(lintConfig.rules).sort();
-        const sortedRules = sortedKeys.reduce((obj, key) => {
-            obj[key] = lintConfig.rules[key];
-            return obj;
+        const sortedRules = sortedKeys.reduce((object, key) => {
+            object[key] = lintConfig.rules[key];
+            return object;
         }, {});
 
         fs.writeFileSync(rulesPath, JSON.stringify(sortedRules, undefined, 4));
@@ -100,9 +100,9 @@ describe('check for unexpected changes', () => {
         const engine = getEngine(tsConfigPath);
         const lintConfig = await engine.calculateConfigForFile(sourceFile);
         const sortedKeys = Object.keys(lintConfig.rules).sort();
-        const sortedRules = sortedKeys.reduce((obj, key) => {
-            obj[key] = lintConfig.rules[key];
-            return obj;
+        const sortedRules = sortedKeys.reduce((object, key) => {
+            object[key] = lintConfig.rules[key];
+            return object;
         }, {});
 
         fs.writeFileSync(rulesPath, JSON.stringify(sortedRules, undefined, 4));
@@ -122,9 +122,9 @@ describe('check for unexpected changes', () => {
         const engine = getEngine(tsConfigPath);
         const lintConfig = await engine.calculateConfigForFile(sourceFile);
         const sortedKeys = Object.keys(lintConfig.rules).sort();
-        const sortedRules = sortedKeys.reduce((obj, key) => {
-            obj[key] = lintConfig.rules[key];
-            return obj;
+        const sortedRules = sortedKeys.reduce((object, key) => {
+            object[key] = lintConfig.rules[key];
+            return object;
         }, {});
 
         fs.writeFileSync(rulesPath, JSON.stringify(sortedRules, undefined, 4));
@@ -137,7 +137,7 @@ describe('check for unexpected changes', () => {
 describe('check for unneeded rules', () => {
 
     it('must not define custom rules with the same options as defaults', async () => {
-        expect.assertions(4);
+        expect.assertions(8);
 
         const configWithoutCustomRules = {
             ...config,
@@ -161,7 +161,7 @@ describe('check for unneeded rules', () => {
     });
 
     it('must not disable rules that were not enabled', async () => {
-        expect.assertions(3);
+        expect.assertions(7);
 
         const configWithoutCustomRules = {
             ...config,
@@ -190,7 +190,7 @@ describe('validate ESLint configs on files', () => {
 
     const filesPath = path.join('tests', 'test-files');
     const contents = fs.readdirSync(filesPath, { withFileTypes: true });
-    const directories = contents.filter((content) => content.isDirectory()).map((dir) => dir.name);
+    const directories = contents.filter((content) => content.isDirectory()).map((directory) => directory.name);
 
     describe.each(directories)('directory: %s', (directory) => {
         const errorFilePath = path.join(filesPath, directory, 'errors.json');

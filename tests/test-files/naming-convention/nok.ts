@@ -17,5 +17,5 @@ new Moo();
 class boo {}
 new boo();
 
-const MyProp = 'myProp';
-void MyProp;
+const MyProperty = 'myProp';
+void MyProperty;

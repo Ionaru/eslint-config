@@ -8,14 +8,14 @@ class Moo {
 
 new Moo();
 
-const params = {
+const parameters = {
     'user_id': 500,
     'User-Agent': 'MyApp/1.0',
 };
 
-const params2 = {
+const parameters2 = {
     user_id: 50,
 };
 
-void params;
-void params2;
+void parameters;
+void parameters2;

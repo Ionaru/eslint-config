@@ -5,6 +5,7 @@ module.exports = {
         'plugin:sonarjs/recommended',
         'plugin:import/recommended',
         'plugin:import/typescript',
+        'plugin:unicorn/recommended',
     ],
     overrides: [
         {
@@ -250,8 +251,10 @@ module.exports = {
         ],
         'space-in-parens': ['error', 'never'],
         'spaced-comment': 'error',
-        'unicorn/no-null': 'error',
-        'unicorn/prefer-ternary': 'error',
+        'unicorn/empty-brace-spaces': 'off',
+        'unicorn/no-array-reduce': 'off',
+        'unicorn/prefer-module': 'off',
+        'unicorn/prefer-top-level-await': 'off',
         'valid-typeof': 'off',
     },
 };
