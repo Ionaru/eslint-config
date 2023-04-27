@@ -2,11 +2,11 @@
     {
         "ruleId": "@typescript-eslint/naming-convention",
         "severity": 2,
-        "message": "Interface name `Moo` must have one of the following prefixes: I",
+        "message": "Interface name `boo` must match one of the following formats: PascalCase",
         "line": 1,
         "column": 11,
         "nodeType": "Identifier",
-        "messageId": "missingAffix",
+        "messageId": "doesNotMatchFormat",
         "endLine": 1,
         "endColumn": 14
     },

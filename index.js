@@ -107,11 +107,6 @@ module.exports = {
                 selector: 'typeLike',
             },
             {
-                format: ['PascalCase'],
-                prefix: ['I'],
-                selector: 'interface',
-            },
-            {
                 format: ['UPPER_CASE'],
                 selector: 'enumMember',
             },
