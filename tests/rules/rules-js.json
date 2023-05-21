@@ -898,7 +898,10 @@
         "error"
     ],
     "unicorn/prefer-at": [
-        "off"
+        "error"
+    ],
+    "unicorn/prefer-blob-reading-methods": [
+        "error"
     ],
     "unicorn/prefer-code-point": [
         "error"
@@ -922,7 +925,7 @@
         "error"
     ],
     "unicorn/prefer-event-target": [
-        "off"
+        "error"
     ],
     "unicorn/prefer-export-from": [
         "error"
@@ -991,7 +994,7 @@
         "error"
     ],
     "unicorn/prefer-string-replace-all": [
-        "off"
+        "error"
     ],
     "unicorn/prefer-string-slice": [
         "error"

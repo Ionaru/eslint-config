@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### BREAKING CHANGES
 - Added recommended rules from eslint-plugin-unicorn.
 
+### Added
+- Support for eslint-plugin-unicorn@47
+
 ### Removed
 - Removed "I" prefix requirement for interface names (in @typescript-eslint/naming-convention).
 
