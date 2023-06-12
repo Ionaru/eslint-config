@@ -3,6 +3,6 @@
         "allowJs": true
     },
     "files": [
-        "../../index.js"
+        "../../index.cjs"
     ]
 }

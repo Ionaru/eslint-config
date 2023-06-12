@@ -4,7 +4,7 @@ import path from 'node:path';
 import { ESLint } from 'eslint';
 import { describe, expect, it } from 'vitest';
 
-import config from '../index.js';
+import config from '../index.cjs';
 
 const getEngine = (project, customConfig = config) => new ESLint({
     baseConfig: customConfig,
@@ -23,10 +23,10 @@ const getErrors = (
 
 describe('self-lint', () => {
 
-    it('must not have any errors in index.js', async () => {
+    it('must not have any errors in index.cjs', async () => {
         expect.assertions(1);
         const results = await getErrors(
-            'index.js',
+            'index.cjs',
             path.join('tests', 'configs', 'index.tsconfig.json'),
         );
         expect(results[0].messages).toStrictEqual([]);
@@ -151,8 +151,8 @@ describe('check for unneeded rules', () => {
 
         const engine1 = getEngine(path.join('tests', 'configs', 'index.tsconfig.json'), configWithoutCustomRules);
         const engine2 = getEngine(path.join('tests', 'configs', 'index.tsconfig.json'), configOnlyCustomRules);
-        const config1 = await engine1.calculateConfigForFile('index.js');
-        const config2 = await engine2.calculateConfigForFile('index.js');
+        const config1 = await engine1.calculateConfigForFile('index.cjs');
+        const config2 = await engine2.calculateConfigForFile('index.cjs');
 
         const duplicateRules = Object.keys(config2.rules).filter((rule) => config1.rules[rule]);
         for (const duplicateRule of duplicateRules) {
@@ -175,8 +175,8 @@ describe('check for unneeded rules', () => {
 
         const engine1 = getEngine(path.join('tests', 'configs', 'index.tsconfig.json'), configWithoutCustomRules);
         const engine2 = getEngine(path.join('tests', 'configs', 'index.tsconfig.json'), configOnlyCustomRules);
-        const config1 = await engine1.calculateConfigForFile('index.js');
-        const config2 = await engine2.calculateConfigForFile('index.js');
+        const config1 = await engine1.calculateConfigForFile('index.cjs');
+        const config2 = await engine2.calculateConfigForFile('index.cjs');
 
         // Get all customer rules that are disabled
         const disabledRules = Object.keys(config2.rules).filter((rule) => config2.rules[rule][0] === 'off');

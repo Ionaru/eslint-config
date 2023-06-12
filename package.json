@@ -3,9 +3,9 @@
     "type": "module",
     "version": "10.0.0",
     "description": "My custom flavoured config for ESLint",
-    "main": "index.js",
+    "main": "index.cjs",
     "files": [
-        "index.js"
+        "index.cjs"
     ],
     "repository": {
         "type": "git",
