@@ -1,0 +1,13 @@
+[
+    {
+        "column": 28,
+        "endColumn": 44,
+        "endLine": 20,
+        "line": 20,
+        "message": "Define a constant instead of duplicating this literal 7 times.",
+        "messageId": "defineConstant",
+        "nodeType": "Literal",
+        "ruleId": "sonarjs/no-duplicate-string",
+        "severity": 2
+    }
+]

@@ -1,3 +1,15 @@
+const testSomething = () => {
+    expect(1 + 1).toBe(2);
+    expect(1 + 1).toBe(2);
+    expect(1 + 1).toBe(2);
+};
+
+const testSomethingElse = () => {
+    expect(1 + 1).toBe(2);
+    expect(1 + 1).toBe(2);
+    expect(1 + 1).toBe(2);
+};
+
 describe('getNumberEnumKeys', () => {
 
     beforeAll(() => {/* A hook */});
@@ -16,33 +28,15 @@ describe('getNumberEnumKeys', () => {
     });
 
     it('is a test that does stuff 1', () => {
-        expect.assertions(1);
-        expect(1 + 1).toBe('The number two');
+        expect.assertions(3);
+        testSomething();
+        testSomethingElse();
     });
 
     it('is a test that does stuff 2', () => {
-        expect.assertions(1);
-        expect(1 + 1).toBe('The number two');
-    });
-
-    it('is a test that does stuff 3', () => {
-        expect.assertions(1);
-        expect(1 + 1).toBe('The number two');
-    });
-
-    it('is a test that does stuff 4', () => {
-        expect.assertions(1);
-        expect(1 + 1).toBe('The number two');
-    });
-
-    it('is a test that does stuff 5', () => {
-        expect.assertions(1);
-        expect(1 + 1).toBe('The number two');
-    });
-
-    it('is a test that does stuff 6', () => {
-        expect.hasAssertions();
-        expect(1 + 1).toBe('The number two');
+        expect.assertions(3);
+        testSomething();
+        testSomethingElse();
     });
 
     it('zero-indexed enum 2', () => {

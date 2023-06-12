@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const fs = require('node:fs');
-const path = require('node:path');
+import fs from 'node:fs';
+import path from 'node:path';
 
-const { ESLint } = require('eslint');
+import { ESLint } from 'eslint';
+import { describe, expect, it } from 'vitest';
 
-const config = require('../index.js');
+import config from '../index.js';
 
 const getEngine = (project, customConfig = config) => new ESLint({
     baseConfig: customConfig,

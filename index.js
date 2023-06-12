@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
@@ -9,13 +9,8 @@ module.exports = {
     ],
     overrides: [
         {
-            extends: ['plugin:jest/all'],
             files: ['*.spec.ts', '*.spec.js'],
             rules: {
-                'import/extensions': 'off',
-                'jest/lowercase-name': 'off',
-                'jest/no-hooks': 'off',
-                'jest/prefer-each': 'off',
                 'sonarjs/no-duplicate-string': 'off',
                 'sonarjs/no-identical-functions': 'off',
             },
