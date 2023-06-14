@@ -18,7 +18,7 @@
     },
     "homepage": "https://github.com/Ionaru/eslint-config#readme",
     "scripts": {
-        "test": "vitest run tests/eslint-config.spec.js",
+        "test": "vitest run tests/eslint-config.spec.js --coverage",
         "preversion": "npm run test"
     },
     "peerDependencies": {
