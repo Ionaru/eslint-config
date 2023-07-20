@@ -248,6 +248,7 @@ module.exports = {
         'spaced-comment': 'error',
         'unicorn/empty-brace-spaces': 'off',
         'unicorn/no-array-reduce': 'off',
+        'unicorn/no-empty-file': 'off',
         'unicorn/prefer-module': 'off',
         'unicorn/prefer-top-level-await': 'off',
         'valid-typeof': 'off',

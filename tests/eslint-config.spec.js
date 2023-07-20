@@ -137,7 +137,7 @@ describe('check for unexpected changes', () => {
 describe('check for unneeded rules', () => {
 
     it('must not define custom rules with the same options as defaults', async () => {
-        expect.assertions(8);
+        expect.assertions(9);
 
         const configWithoutCustomRules = {
             ...config,
@@ -161,7 +161,7 @@ describe('check for unneeded rules', () => {
     });
 
     it('must not disable rules that were not enabled', async () => {
-        expect.assertions(7);
+        expect.assertions(8);
 
         const configWithoutCustomRules = {
             ...config,
