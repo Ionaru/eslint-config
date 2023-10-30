@@ -4,7 +4,9 @@ All notable changes to my ESLint config will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+<!-- ## [Unreleased] -->
+
+## [13.1.0] - 2022-10-30
 ### Added
 - Support for eslint-plugin-unicorn@49
 
@@ -229,7 +231,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial version.
 
-[Unreleased]: https://github.com/Ionaru/eslint-config/compare/13.0.0...HEAD
+[Unreleased]: https://github.com/Ionaru/eslint-config/compare/13.1.0...HEAD
+[13.1.0]: https://github.com/Ionaru/eslint-config/compare/13.0.0...13.1.0
 [13.0.0]: https://github.com/Ionaru/eslint-config/compare/12.2.0...13.0.0
 [12.2.0]: https://github.com/Ionaru/eslint-config/compare/12.1.1...12.2.0
 [12.1.1]: https://github.com/Ionaru/eslint-config/compare/12.1.0...12.1.1
