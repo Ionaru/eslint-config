@@ -822,6 +822,9 @@
     "unicorn/no-unnecessary-await": [
         "error"
     ],
+    "unicorn/no-unnecessary-polyfills": [
+        "error"
+    ],
     "unicorn/no-unreadable-array-destructuring": [
         "error"
     ],
