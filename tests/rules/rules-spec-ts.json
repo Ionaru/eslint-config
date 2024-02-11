@@ -712,7 +712,7 @@
         "error"
     ],
     "unicorn/consistent-destructuring": [
-        "error"
+        "off"
     ],
     "unicorn/consistent-function-scoping": [
         "error"
